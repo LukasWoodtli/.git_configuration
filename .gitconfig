@@ -1,0 +1,83 @@
+[user]
+	useConfigOnly = true
+
+[core]
+	editor = vim
+	pager = less -F -X
+[push]
+	default = simple
+
+[alias]
+	diffd = difftool -d
+	diffdm = difftool --tool=diffmerge
+	diffk = difftool --tool=kdiff3
+	diffwm = difftool -d --tool=winmerge
+	diffp4 = difftool --tool=p4merge
+	diffu = difftool --tool=diffuse
+
+	smu = submodule update
+	diff-stash = stash show -p stash@{0}
+
+[diff]
+	prompt = false
+	tool = meld
+
+[difftool]
+	prompt = false
+	tool = meld
+
+[difftool "meld"]
+	cmd = meld \"$LOCAL\" \"$REMOTE\"
+
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[difftool "cdiff"]
+	cmd = cdiff -s \"$LOCAL\" \"$REMOTE\"
+
+[difftool "kdiff3"]
+	cmd = kdiff3 \"$LOCAL\" \"$REMOTE\"
+
+[difftool "winmerge"]
+	name = WinMerge
+	trustExitCode = false
+	cmd = "wine '~/.wine/drive_c/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\""
+
+[difftool "p4merge"]
+	cmd = p4merge "$LOCAL" "$REMOTE"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+[difftool "diffuse"]
+	cmd = diffuse "$LOCAL" "$REMOTE"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+
+
+[merge]
+	prompt = false
+	tool = mergemeld
+	conflictstyle = diff3
+	log = yes
+
+[mergetool "mergemeld"]
+	  cmd = meld --auto-merge --output \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --diff \"$BASE\" \"$LOCAL\" --diff \"$BASE\" \"$REMOTE\"
+
+
+[mergetool "kdiff3"]
+	cmd = kdiff3 $LOCAL $BASE $REMOTE -o $MERGED
+
+[init]
+#	templateDir = ~/git-templates
+
+[credential]
+	helper = libsecret
+
+[clangFormat]
+	extension = cpp,c,hpp,h
+
+[include]
+	path = .gitconfig-custom
+
