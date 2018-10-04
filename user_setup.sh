@@ -11,6 +11,6 @@ fi
 
 pushd $REPO_PATH &> /dev/null
 git config user.name "Lukas Woodtli"
-git config user.email woodtli.lukas@gmail.com
+git config user.email "woodtli.lukas@gmail.com"
 popd &> /dev/null
 
