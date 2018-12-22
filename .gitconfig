@@ -4,6 +4,9 @@
 [core]
 	editor = vim
 	pager = less -F -X
+	excludesfile = ~/.git_configuration/.gitignore
+	precomposeunicode = true
+
 [push]
 	default = simple
 
@@ -56,7 +59,6 @@
 	trustExitCode = false
 	keepBackup = false
 
-
 [merge]
 	prompt = false
 	tool = mergemeld
@@ -65,7 +67,6 @@
 
 [mergetool "mergemeld"]
 	  cmd = meld --auto-merge --output \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --diff \"$BASE\" \"$LOCAL\" --diff \"$BASE\" \"$REMOTE\"
-
 
 [mergetool "kdiff3"]
 	cmd = kdiff3 $LOCAL $BASE $REMOTE -o $MERGED
