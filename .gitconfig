@@ -18,6 +18,8 @@
 	diffp4 = difftool --tool=p4merge
 	diffu = difftool --tool=diffuse
 	diffod = difftool --tool=opendiff
+	cdiff = difftool --tool=cdiff
+	# icdiff works out of the box with git: jus run `git icdiff`
 
 	smu = submodule update
 	diff-stash = stash show -p stash@{0}
@@ -72,10 +74,12 @@
 	cmd = kdiff3 $LOCAL $BASE $REMOTE -o $MERGED
 
 [init]
-#	templateDir = ~/git-templates
+	templateDir = ~/git-templates
 
 [credential]
 	helper = libsecret
+[difftool]
+	prompt = false
 
 [clangFormat]
 	extension = cpp,c,hpp,h
