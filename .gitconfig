@@ -76,10 +76,12 @@
 [init]
 	templateDir = ~/git-templates
 
-[credential]
-	helper = libsecret
 [difftool]
 	prompt = false
+
+#[credential]
+#	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+#	helper = libsecret
 
 [clangFormat]
 	extension = cpp,c,hpp,h
