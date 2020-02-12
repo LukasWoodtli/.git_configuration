@@ -85,6 +85,10 @@
 
 [clangFormat]
 	extension = cpp,c,hpp,h
+	style = file
+
+[hooks.clangformat]
+	verbose = ON
 
 [include]
 	path = .gitconfig-custom
