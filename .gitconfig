@@ -19,7 +19,7 @@
 	diffu = difftool --tool=diffuse
 	diffod = difftool --tool=opendiff
 	cdiff = difftool --tool=cdiff
-	# icdiff works out of the box with git: jus run `git icdiff`
+	# icdiff works out of the box with git: just run `git icdiff`
 
 	smu = submodule update
 	diff-stash = stash show -p stash@{0}
@@ -47,7 +47,7 @@
 [difftool "winmerge"]
 	name = WinMerge
 	trustExitCode = false
-	cmd = "wine '~/.wine/drive_c/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\""
+	#cmd = "wine '~/.wine/drive_c/Program Files (x86)/WinMerge/WinMergeU.exe' \"$LOCAL\" \"$REMOTE\""
 
 [difftool "p4merge"]
 	cmd = p4merge "$LOCAL" "$REMOTE"
@@ -66,6 +66,7 @@
 	tool = mergemeld
 	conflictstyle = diff3
 	log = yes
+	renamelimit = 9999
 
 [mergetool "mergemeld"]
 	  cmd = meld --auto-merge --output \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --diff \"$BASE\" \"$LOCAL\" --diff \"$BASE\" \"$REMOTE\"
@@ -79,17 +80,10 @@
 [difftool]
 	prompt = false
 
-#[credential]
-#	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
-#	helper = libsecret
-
 [clangFormat]
 	extension = cpp,c,hpp,h
 	style = file
 
-[hooks.clangformat]
+[hooks "clangformat"]
 	verbose = ON
-
-[include]
-	path = .gitconfig-custom
 

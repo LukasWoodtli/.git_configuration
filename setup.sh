@@ -16,5 +16,5 @@ then
 fi
 
 pushd $HOME &> /dev/null
-ln -s $GITCONFIG_FILE_REPO $GITCONFIG_FILE
+ln $GITCONFIG_FILE_REPO $GITCONFIG_FILE
 
